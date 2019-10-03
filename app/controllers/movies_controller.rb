@@ -14,11 +14,11 @@ class MoviesController < ApplicationController
     # deal with part 2 assignment
     #@all_ratings = Movie.get_ratings
     #if !(params[:ratings].nil?)
-    check_ratings = params[:ratings]
+    #check_ratings = params[:ratings]
     #@movies = Movie.where(:rating => check_ratings.keys)
     #else
     #check_ratings = @all_ratings
-    @movies = Movie.where(:rating => check_ratings.keys)
+    @movies = Movie.where(:rating => params[:ratings])
     #end
     
     # deal with part 1 assignment
