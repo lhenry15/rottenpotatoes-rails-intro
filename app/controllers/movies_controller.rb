@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    # Get sort_field
+    # get sort_field
     @all_ratings = Movie.get_ratings
     if Movie.column_names.include?(params[:sort])
       session[:sort] = params[:sort]
@@ -61,7 +61,7 @@ class MoviesController < ApplicationController
       end
     end
 
-    # Sorting on the query for rating
+    # sorting on the query for rating
     if !@sort_field.nil?
       @movies = Movie.order(@sort_field).where(rating: @checked_ratings)
     else
