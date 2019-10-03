@@ -17,8 +17,8 @@ class MoviesController < ApplicationController
     
     # deal with part 2 assignment
     @all_ratings = Movie.get_ratings
-    #check_ratings = params[:ratings]
-    check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
+    check_ratings = params[:ratings]
+    #check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
     keys = check_ratings
     keys.each do |rating|
       params[rating] = true
