@@ -21,7 +21,6 @@ class MoviesController < ApplicationController
     end
     @movies = Movie.where(:rating => check_ratings.keys)
     
-    
     # deal with part 1 assignment
     if !(params[:sort].nil?)
       @sort_field = params[:sort]
