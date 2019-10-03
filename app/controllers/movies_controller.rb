@@ -14,6 +14,13 @@ class MoviesController < ApplicationController
     # deal with part 1 assignment
     @sort_field = params[:sort]
     @movies = Movie.order(@sort_field)
+    
+    # deal with part 2 assignment
+    @all_ratings = Movie.get_ratings
+    check_ratings = params[:ratings]
+    @movies = Movie.where(:rating => check_ratings.keys)
+
+    
   end
 
   def new
