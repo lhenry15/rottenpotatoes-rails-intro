@@ -22,10 +22,10 @@ class MoviesController < ApplicationController
 
     
     # deal with part 1 assignment
-    #if !(params[:sort].nil?)
-    @sort_field = params[:sort]
-    @movies = @movies.order(@sort_field)
-    #end
+    if !(params[:sort].nil?)
+      @sort_field = params[:sort]
+      @movies = @movies.order(@sort_field)
+    end
   end
 
   def new
