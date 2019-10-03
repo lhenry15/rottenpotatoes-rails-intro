@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     if !(params[:ratings].nil?)
       check_ratings = params[:ratings]
     else
-      check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
+      check_ratings = @all_ratings
     end
     @movies = Movie.where(:rating => check_ratings.keys)
     
