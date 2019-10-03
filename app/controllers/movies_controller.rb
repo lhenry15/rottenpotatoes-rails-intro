@@ -18,13 +18,16 @@ class MoviesController < ApplicationController
       check_ratings = params[:ratings]
     else
       check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
+    end
     @movies = Movie.where(:rating => check_ratings.keys)
     
-    # deal with part 1 assignment
-    @sort_field = params[:sort]
-    @movies = @movies.order(@sort_field)
     
-  end
+    # deal with part 1 assignment
+    if !(params[:sort].nil?)
+      @sort_field = params[:sort]
+      @movies = @movies.order(@sort_field)
+    
+    end
 
   def new
     # default: render 'new' template
