@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
   def index
     
     # deal with part 2 assignment
-    @all_ratings = Movie.get_ratings
+    @all_ratings = Movie.get_ratings()
     if !(params[:ratings].nil?)
       check_ratings = params[:ratings]
     else
