@@ -18,7 +18,9 @@ class MoviesController < ApplicationController
     # deal with part 2 assignment
     @all_ratings = Movie.get_ratings
     check_ratings = params[:ratings]
-    @movies = Movie.where(:rating => check_ratings)
+    check_ratings.each do |rating|
+      params[rating] = true
+    @movies = Movie.where(:rating => check_ratings.keys)
 
     
   end
