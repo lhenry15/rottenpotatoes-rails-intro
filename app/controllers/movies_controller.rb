@@ -11,9 +11,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-    # deal with part 1 assignment
-    @sort_field = params[:sort]
-    @movies = Movie.order(@sort_field)
     
     # deal with part 2 assignment
     @all_ratings = Movie.get_ratings
@@ -21,7 +18,10 @@ class MoviesController < ApplicationController
    # check_ratings.keys.each do |rating|
     #  params[rating] = true
     @movies = Movie.where(:rating => params[:ratings].keys)
-
+    
+    # deal with part 1 assignment
+    @sort_field = params[:sort]
+    @movies = @movies.order(@sort_field)
     
   end
 
