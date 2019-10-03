@@ -13,19 +13,19 @@ class MoviesController < ApplicationController
   def index
     # deal with part 2 assignment
     @all_ratings = Movie.get_ratings
-    if !(params[:ratings].nil?)
-      check_ratings = params[:ratings]
-      @movies = Movie.where(:rating => check_ratings.keys)
-    else
-      check_ratings = @all_ratings
-      @movies = Movie.where(:rating => check_ratings.keys)
-    end
+    #if !(params[:ratings].nil?)
+    check_ratings = params[:ratings]
+    #@movies = Movie.where(:rating => check_ratings.keys)
+    #else
+    #check_ratings = @all_ratings
+    @movies = Movie.where(:rating => check_ratings.keys)
+    #end
     
     # deal with part 1 assignment
-    if !(params[:sort].nil?)
-      @sort_field = params[:sort]
-      @movies = @movies.order(@sort_field)
-    end
+    #if !(params[:sort].nil?)
+    @sort_field = params[:sort]
+    @movies = @movies.order(@sort_field)
+    #end
   end
 
   def new
