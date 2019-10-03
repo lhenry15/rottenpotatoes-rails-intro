@@ -26,8 +26,8 @@ class MoviesController < ApplicationController
     #if !(params[:sort].nil?)
     @sort_field = params[:sort]
     @movies = @movies.order(@sort_field)
-    
     #end
+  end
 
   def new
     # default: render 'new' template
