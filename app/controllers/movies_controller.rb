@@ -17,17 +17,7 @@ class MoviesController < ApplicationController
     
     # deal with part 2 assignment
     @all_ratings = Movie.get_ratings
-    if session[:ratings].nil?
-      check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
-      session[:ratings] = check_ratings
-    else
-      check_ratings = params[:ratings]
-      session[:ratings] = check_ratings
-    end
-    
-    keys = session[:ratings].keys
-    keys.each do |rating|
-      params[rating] = true
+    check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
     @movies = Movie.where(:rating => check_ratings.keys)
 
     
