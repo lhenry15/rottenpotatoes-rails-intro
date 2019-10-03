@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
     #check_ratings = Hash[@all_ratings.collect {|item| [item, 1]}]
    # check_ratings.keys.each do |rating|
     #  params[rating] = true
-    @movies = Movie.where(:rating => params[ratings].keys)
+    @movies = Movie.where(:rating => params[:ratings].keys)
 
     
   end
