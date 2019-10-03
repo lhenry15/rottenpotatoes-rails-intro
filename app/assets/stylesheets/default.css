@@ -1,0 +1,25 @@
+table#movies {
+  margin: 10px;
+  width: 100%;
+}
+table#movies th {
+  border: 2px solid white;
+  font-weight: bold;
+}
+table#movies th, table#movies td {
+  padding: 4px;
+  text-align: left;
+}
+#notice #warning {
+  margin: 1em 0;
+  padding: 4px;
+}
+form label {
+  display: block;
+  line-height: 25px;
+  font-weight: bold;
+  color: maroon;
+}
+table#movies th.hilite {
+    background-color: yellow;
+}
